@@ -14,8 +14,8 @@ var articles = {
         content :
             <p>
             This is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article. this is the content for my first article.this is the content for my first article.
-        </p>
-         <p>
+            </p>
+            <p>
         This is the content for my first article.this is the content for my first article.this is the content for my first article.this is the content for my first article. this is the content for my first article.this is the content for my first article.
         </p>
         <p>
