@@ -30,7 +30,7 @@ var articles = {
             <p>
             This is the content for my second article.
             </p>`
-};
+};\
       'article-Three' : {
       title :'Article Three | Riba Fathima',
         heading :'Article Two',
