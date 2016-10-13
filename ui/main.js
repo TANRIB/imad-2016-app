@@ -55,4 +55,3 @@ submit.onclick = function () {
    // Make the request
    request.open('GET', 'http://tanrib.imad.hasura-app.io/submit-name='+ name, true);
    request.send(null);
-};
