@@ -2,7 +2,6 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var pool = require('pg').Pool;
-
 var config = {
     user: 'tanrib',
     database: 'tanrib',
@@ -10,46 +9,9 @@ var config = {
     port: '5432',
     password: process.env.DB_PASSWORD
 };
-
 var app = express();
 app.use(morgan('combined'));
 
-
-var articles = {
-    'article-one' : {
-      title:'Article One | Riba Fathima',
-      heading:'Article One',
-      date:'Sep 5, 2016',
-      content:`
-          <p>
-              This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
-          </p>
-          <p>
-                This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
-          </p>
-          <p>
-                This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.This is the content for my first article.
-          </p>`
-   },
-    'article-two' : {
-          title:'Article Two | Riba Fathima',
-          heading:'Article Two',
-          date:'Sep 10, 2016',
-         content:`
-            <p>
-                This is the content for my second article.
-            </p>`    
-    },   
-    'article-three' : {
-       title:'Article Three | Riba Fathima',
-       heading:'Article Three',
-       date:'Sep 15, 2016',
-       content:`
-          <p>
-              This is the content for my third article.
-          </p>`
-    }  
-};  
 
 function createTemplate (data) {
     var title = data.title;
@@ -67,7 +29,7 @@ var htmlTemplate = `
         <link href="/ui/style.css" rel="stylesheet" />
      </head>
     <body>
-        <div class= "container">
+        <div class= container >
       <div>
             <a href= "/">Home</a>
         </div>
