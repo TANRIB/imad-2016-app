@@ -1,59 +1,218 @@
-// Counter code
-var button = document.getElementById('counter');
+var btn = $('#counter');
 
-button.onclick = function () {
-    
-    // Create a request object
-    var request = new XMLHttpRequest();
-    
-    // Capture the response and store it in a variable
-    request.onreadystatechange = function () {
-      if (request.readyState === XMLHttpRequest.DONE) {
-          // Take some action
-          if (request.status === 200) {
-              var counter = request.responseText;
-              var span = document.getElementById('count'); 
-              span.innerHTML = counter.toString();
-          }
-      }
-      // Not done yet
-   };
-    
-   // Make the request
-   request.open('GET', 'http://tanrib.imad.hasura-app.io/counter', true);
-   request.send(null);
-};    
+if (btn !== undefined) {
+		btn.click(function() {
 
-// Submit name
-var submit = document.getElementById('submit_btn');
-submit.onclick = function () { 
-    
-    // Create a request object
-    var request = new XMLHttpRequest();
-    
-    // Capture the response and store it in a variable
-    request.onreadystatechange = function () {
-      if (request.readyState === XMLHttpRequest.DONE) {
-           // Take some action
-           if (request.status === 200) {
-              // Capture a list of names and render it as a list
-              var names = request.responseText;
-              names = JSON.parse(names);
-              var list = '';
-              for(var i=0; i< names.length; i++) {
-                 list += '<li>' + names[i] + '</li>';
-              } 
-              var ul = document.getElementById('namelist');
-              ul.innerHTML = list;
-          }
-      }
-      // Not done yet
-   };
-    
-   // Make the request
-   var nameInput = document.getElementById('name');
-   var name = nameInput.value; 
-   request.open('GET', 'http://tanrib.imad.hasura-app.io/submit-name?name='+ name, true);
-   request.send(null);
-   
+			var req = new XMLHttpRequest();
+
+			req.onreadystatechange = function() {
+				if (req.readyState === XMLHttpRequest.DONE) {
+					if (req.status === 200) {
+						var counter = req.responseText;
+						var spn = $('#count');
+						spn.html(counter);
+					}
+				}
+			};
+
+			req.open('GET', '/counter', true);
+			req.send(null);
+		});
+}
+
+var sbmt_btn = $('#sbmt_btn');
+
+
+if (sbmt_btn !== undefined) {
+		sbmt_btn.click(function () {
+			var commentEl = $('#comment');
+			var comment = commentEl.val();
+			commentEl.val('');
+			
+			var req = new XMLHttpRequest();
+
+			req.onreadystatechange = function() {
+				if (req.readyState === XMLHttpRequest.DONE) {
+					if (req.status === 200) {
+						var obj = req.responseText;
+
+						obj = JSON.parse(obj);
+
+						var commentBox = $('#comment_section');
+						commentBox.show();
+
+						var tmp = '';
+						var totalComments = $('#total_comments');
+						totalComments.html(obj.length);
+
+
+						for (var i = 0; i< obj.length; i++) {
+							
+							tmp += ` 	
+							<div class="col-sm-2 text-center">
+							  <img src="http://www.w3schools.com/bootstrap/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+							</div>
+							<div class="col-sm-10">
+							  <h4>John Snow <small>`+obj[i].time+`</small></h4>
+							  <p>`+obj[i].comment+`</p> 
+							  <br>
+							</div>`;
+						}
+
+						commentBox.html(tmp);
+					}
+				}
+			};
+	
+			var el = $(".active").children();
+			var context = el[0].id;
+				
+			req.open('GET', 'http://'+window.location.host+'/submit-comment?context='+context+'&comment='+comment, true);
+			req.send(null);
+		});
+}
+
+$( document ).ready(function() {
+  // Handler for .ready() called.
+	var req1 = new XMLHttpRequest();
+
+	req1.onreadystatechange = function() {
+		if (req1.readyState === XMLHttpRequest.DONE) {
+			if (req1.status === 200) {
+				var counter = req1.responseText;
+				var spn = $('#count');
+				spn.html(counter);
+			}
+		}
+	};
+
+	req1.open('GET', '/currentctr', true);
+	req1.send(null);
+
+	var req2 = new XMLHttpRequest();
+
+	req2.onreadystatechange = function() {
+		if (req2.readyState === XMLHttpRequest.DONE) {
+			if (req2.status === 200) {
+
+				
+				var obj = req2.responseText;
+
+				if (obj != "null") {
+
+				obj = JSON.parse(obj);
+
+				var commentBox = $('#comment_section');
+				commentBox.show();
+
+				var tmp = '';
+				var totalComments = $('#total_comments');
+				totalComments.html(obj.length);
+
+
+				for (var i = 0; i< obj.length; i++) {
+					
+					tmp += ` 	
+					<div class="col-sm-2 text-center">
+					  <img src="http://www.w3schools.com/bootstrap/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+					</div>
+					<div class="col-sm-10">
+					  <h4>John Snow <small>`+obj[i].time+`</small></h4>
+					  <p>`+obj[i].comment+`</p> 
+					  <br>
+					</div>`;
+				}
+
+				commentBox.html(tmp);
+				} else {
+					var commentBox = $('#comment_section');
+					commentBox.html("");
+					var totalComments = $('#total_comments');
+					totalComments.html("0");
+				}
+				
+			}
+		}
+	};
+
+	var el = $(".active").children();
+	var context = el[0].id;
+
+
+	req2.open('GET', '/fetchcomments?context='+context, true);
+	req2.send(null);
+});
+
+function showArticle(data) {
+
+	var request = new XMLHttpRequest();
+	var data = data.id;
+
+	request.onreadystatechange = function() {
+		if (request.readyState === XMLHttpRequest.DONE) {
+			if (request.status === 200) {
+				var response = request.responseText;
+				var viewElem = $('#viewwindow');
+				viewElem.html(response);
+			}
+		}
+	};
+
+	request.open('GET', 'http://localhost:8080/'+data, true);
+	request.send(null);
+
+	var req2 = new XMLHttpRequest();
+
+	req2.onreadystatechange = function() {
+		if (req2.readyState === XMLHttpRequest.DONE) {
+			if (req2.status === 200) {
+
+				var obj = req2.responseText;
+
+				if (obj != "null") {
+				obj = JSON.parse(obj);
+
+				var commentBox = $('#comment_section');
+				commentBox.show();
+
+				var tmp = '';
+				var totalComments = $('#total_comments');
+				totalComments.html(obj.length);
+
+
+				for (var i = 0; i< obj.length; i++) {
+					
+					tmp += ` 	
+					<div class="col-sm-2 text-center">
+					  <img src="http://www.w3schools.com/bootstrap/bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+					</div>
+					<div class="col-sm-10">
+					  <h4>John Snow <small>`+obj[i].time+`</small></h4>
+					  <p>`+obj[i].comment+`</p> 
+					  <br>
+					</div>`
+				}
+
+				commentBox.html(tmp);
+				} else {
+					var commentBox = $('#comment_section');
+					commentBox.html("");
+					var totalComments = $('#total_comments');
+					totalComments.html("0");
+				}
+			}
+		}
+	};
+
+	req2.open('GET', '/fetchcomments?context='+data, true);
+	req2.send(null);
 };
+
+$(function() {
+	$("li").click(function() {
+		// remove classes from all
+		$("li").removeClass("active");
+		// add class to the one we clicked
+		$(this).addClass("active");
+	});
+});
