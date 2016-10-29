@@ -62,15 +62,10 @@ var htmlTemplate = `
        This button <button id="counter">Click me!</button> has been clicked <span id ="count">0</span> times
         <hr/>
         <input type="text" id="name" placeholder="name"></input>
-        <input type="submit" value="Comment" id="Comment_btn"></input>
+        <input type="submit" value="Submit" id="Submit_btn"></input>
         <ul id="namelist">
         </ul>
-          <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
-           <br>
-           <p align = "center"><button id = "comment-button" >Submit</button></p>
         </div>
-        <br>
-        <hr>
         </div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
