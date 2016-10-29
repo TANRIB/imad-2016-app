@@ -65,6 +65,9 @@ var htmlTemplate = `
         <input type="submit" value="Submit" id="submit_btn"></input>
         <ul id="namelist">
         </ul>
+          <p align = "center"> <textarea id = "comment" rows = "8" tabindex = "4" placeholder = "Add a public comment" ></textarea> </p>
+           <br>
+           <p align = "center"><button id = "comment-button" >Submit</button></p>
         </div>
         </div>
         <script type="text/javascript" src="/ui/main.js">
