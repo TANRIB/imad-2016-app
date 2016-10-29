@@ -58,25 +58,21 @@ var htmlTemplate = `
         <link href="/ui/style.css" rel="stylesheet" />
      </head>
     <body>
-        <div class= "container">
-      <div>
-            <a href= "/">Home</a>
+       <div class = "footer">
+       This button <button id="counter">Click me!</button> has been clicked <span id ="count">0</span> times
+        <hr/>
+        <input type="text" id="name" placeholder="name"></input>
+        <input type="submit" value="Submit" id="submit_btn"></input>
+        <ul id="namelist">
+        </ul>
         </div>
-         <hr/>
-         <h3>
-            ${heading}
-         </h3>
-         <div>
-             ${date} 
-         </div>
-         <div>
-            ${content}
-         </div>
-       </div>
-     </body>
-   </html>
-    `;
-    return htmlTemplate;
+        </div>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+        </body>
+        </html>
+`;
+return htmlTemplate;
 }
 
 app.get('/', function (req, res) {
@@ -129,3 +125,4 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+ 
