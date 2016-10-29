@@ -190,7 +190,7 @@ function showArticle(data) {
 					  <h4>John Snow <small>`+obj[i].time+`</small></h4>
 					  <p>`+obj[i].comment+`</p> 
 					  <br>
-					</div>`
+					</div>`;
 				}
 
 				commentBox.html(tmp);
