@@ -69,6 +69,8 @@ var htmlTemplate = `
            <br>
            <p align = "center"><button id = "comment-button" >Submit</button></p>
         </div>
+        <br>
+        <hr>
         </div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
