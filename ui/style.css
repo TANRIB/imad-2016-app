@@ -15,6 +15,7 @@ div {
 li {
     display : inline;
     padding-right : 10px;
+    color : pink;
 }
 
 ul a {
