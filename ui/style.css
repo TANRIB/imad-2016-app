@@ -1,29 +1,26 @@
-body {
-    font-family: sans-serif;
-    margin-top: 60px;
+.wrap {
+  min-width : 600px; 
+  width : 80%;
+  background-color : blue;
+  overflow : hidden;
 }
 
-.center {
-    text-align: center;
+.content , aside {
+    height : 600px;
 }
 
-.text-big {
-    font-size: 300%;
+.content {
+    background-color :red;
+    float : left;
+    width : 80%;
 }
 
-.bold {
-    font-weight: bold;
+aside {
+    background-color: brown;
+    float : left;
+    width : 20%;
 }
-
-.img-medium {
-    height: 200px;
+aside ul {
+    list-style : none;
+    padding-left : 0;
 }
-
-.container  {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #9E9E9E;
-    font-family: sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
- }
