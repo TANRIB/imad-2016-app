@@ -4,9 +4,13 @@ body {
     text-align : center;
 }
 
-img {
-    color : #66CCFF;
+div {
+    width : 500px;
+    background-color : red;
+    margin : auto;
+    text-align : center;
 }
+
 
 li {
     display : inline;
