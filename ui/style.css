@@ -1,16 +1,29 @@
 body {
-    background-color :#999999;
-    font-family : sans-serif;
+    margin: 0 auto;
+    color: #9E9E9E;
+    font-family: sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 60px;
+    background-color: #66CCff;
 }
 
-li {
-    display : inline; 
-    padding-right :10px;
-    text-align :center;
+.center {
+    text-align: center;
 }
 
-header {
-    color :red;
-    padding-left :300px;
-    padding-right:400;
+.text-big {
+    font-size: 300%;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.img-medium {
+    height: 200px;
+}
+
+.container  {
+    max-width: 800px;
+ }
