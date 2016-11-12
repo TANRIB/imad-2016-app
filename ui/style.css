@@ -1,7 +1,8 @@
 body {
     margin: 0 auto;
     color: #9E9E9E;
-    font-family: sans-serif;
+    font-family: sans-serif; 
+    text-align : center;
 }
 
 .center {
