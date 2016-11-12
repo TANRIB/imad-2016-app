@@ -1,26 +1,19 @@
-.wrap {
-  min-width : 600px; 
-  width : 80%;
-  background-color : blue;
-  overflow : hidden;
+body {
+    font-family : sans-serif;
+    
+}
+li {
+    display : inline;
+    padding-right : 10px;
+    
+}
+ul a {
+    text-decoration : none;
+    color : #666;
 }
 
-.content , aside {
-    height : 600px;
-}
-
-.content {
-    background-color :red;
-    float : left;
-    width : 80%;
-}
-
-aside {
-    background-color: brown;
-    float : left;
-    width : 20%;
-}
-aside ul {
-    list-style : none;
-    padding-left : 0;
+ul a:hover {
+    text-decoration : underline;
+    color : black;
+    font-size : 30px;
 }
