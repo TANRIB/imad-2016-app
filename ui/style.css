@@ -1,15 +1,18 @@
 body {
     font-family : sans-serif;
     background-color : red;
+    text-align : center;
 }
+
 img {
     color : #66CCFF;
 }
+
 li {
     display : inline;
     padding-right : 10px;
-    
 }
+
 ul a {
     text-decoration : white;
     color : #66CCFF;
