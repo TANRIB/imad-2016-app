@@ -2,3 +2,9 @@ body {
     background-color :#999999;
     font-family : sans-serif;
 }
+
+ul {
+    background-color : red;
+    margin : auto;
+    text-align : center;
+}
