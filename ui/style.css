@@ -1,36 +1,14 @@
-body {
-    font-family : violet;
-    background-color : red;
-    text-align : center;
-    padding-left : 20px;
-    padding-right : 30px;
+a {
+    color : red;
+    text-decoration : aerial;
+}
+
+h1 {
+    font-family : sans-serif;
 }
 
 div {
     width : 500px;
-    background-color : red;
+    background : red;
     margin : auto;
-    text-align : center;
-}
-
-img {
-    width : 500px;
-    height : 80%;
-    text-align : center;
-}
-
-li {
-    display : inline;
-    padding-right : 10px;
-    color : black;
-}
-
-ul a {
-    text-decoration : white;
-    color : #66CCFF;
-}
-
-ul a:hover {
-    text-decoration : underline;
-    color : black;
 }
