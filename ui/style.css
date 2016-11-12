@@ -2,6 +2,9 @@ body {
     font-family : sans-serif;
     background-color : red;
 }
+img {
+    color : blue;
+}
 li {
     display : inline;
     padding-right : 10px;
