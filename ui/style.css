@@ -2,6 +2,8 @@ body {
     font-family : violet;
     background-color : red;
     text-align : center;
+    padding-left : 20px;
+    padding-right : 30px;
 }
 
 div {
