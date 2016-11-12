@@ -3,8 +3,7 @@ body {
     font-family : sans-serif;
 }
 
-ul {
-    background-color : red;
-    margin : auto;
-    text-align : center;
+li {
+    display : inline; 
+    padding-right :10px;
 }
