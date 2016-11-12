@@ -1,86 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Home</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: 1500px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height: auto;} 
-    }
-  </style>
+    <title> My First Webpage.</title>
 </head>
 <body>
-
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav">
-      <h4>Put your text here</h4>
-      <ul class="nav nav-pills nav-stacked" id="nav">
-        <li class="active"><a id="default" href="#" onclick='showArticle(this)'>Home</a></li>
-        <li><a id="article-one" href="#" onclick='showArticle(this)'>Article One</a></li>
-        <li><a id="article-two" href="#" onclick='showArticle(this)'>Article Two</a></li>
-        <li><a id="article-three" href="#" onclick='showArticle(this)'>Article Three</a></li>
-      </ul><br>
-      <div class="input-group">
-		Click counter <span id="count">0</span> clicked times.
-        <div class="input-group-btn">
-			This button <button id="counter" class="btn btn-primary">Click Me!</button>
-		</div>
-      </div>
+    <div class = "wrap">
+        <h1>About Me</h1>
+    <div class = "content">
+        <p>This is my blog</p>
     </div>
-
-    <div class="col-sm-9">
-      <h4><small>RECENT POSTS</small></h4>
-      <hr>
-	  <div id="viewwindow">	
-      <h2>Home Page</h2>
-		<p>	
-			Add here your content
-		</p>	
-      <br>
-	  </div>
-      
-      <hr>
-      <h4>Leave a Comment:</h4>
-        <div class="form-group">
-          <textarea class="form-control" id="comment" rows="3" required></textarea>
-        </div>
-		<button type="button" class="btn btn-success" id="sbmt_btn">Submit</button>
-      <br><br>
-      
-      <p><span class="badge" id="total_comments">0</span> Comments:</p><br>
-      
-      <div id="comment_section" class="row">
-      </div>
-    </div>
-  </div>
-</div>
-
-<script type="text/javascript" src="/ui/main.js"></script>
+    <aside>
+        <h2>Sidebar</h2>
+        <ul>
+            <li>
+                <a href = "#">Home</a>
+            </li>
+            <li>
+                <a href = "#">About</a>
+            </li>
+            <li>
+                <a href = "#">Contact</a>
+            </li>
+        </ul>
+    </aside>
+   </div>
 </body>
 </html>
