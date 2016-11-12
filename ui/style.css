@@ -1,19 +1,4 @@
 body {
-    background :green;
-}
-
-a {
-    color : red;
-    text-decoration : aerial;
-}
-
-h1 {
+    background-color :#999999;
     font-family : sans-serif;
-}
-
-div {
-    width : 500px;
-    background : red;
-    margin : auto;
-    text-align : center;
 }
