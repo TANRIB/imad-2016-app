@@ -9,7 +9,7 @@ var articles = {
 	'default': {
 		title: 'Home Page',
 		heading: 'Home Page',
-		date: 'Oct 2, 2016',
+		date: 'Sep 5, 2016',
 		content:
 		  `<p>
 			  Hi..My name is A. Riba Fathima
