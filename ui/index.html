@@ -1,45 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset = "utf-8" />
-    <title> My first website</title>
-    <link rel = "stylesheet" href = "css/style.css" >
-</head>
-<body>
-        <h1>My first website</h1>
-        <p>Welcome to my blog...</p>
-         <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4aBcjd6xD2hlrfaXctFvUtY2quh-a_lwWJdrAUwgYhVL1dLsc" />
-        <h3>Things i like</h3>
-         <ul>
-            <li>web development</li>
-            <li>reading</li>
-            <li>travelling</li>
-        </ul>
-        
-         <h4>Leave a Comment:</h4>
-        <div class="form-group">
-          <textarea class="form-control" id="comment" rows="3" required></textarea>
+    <head>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class ="container">
+             <div class="center">
+                 <img id='madi' src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdn4VVnPO0f1uuJGSkwAHygMVlPYwuPcgTXq_zcfyuQKwcmEQXTA" class="img-medium"/>
         </div>
-		<button type="button" class="btn btn-success" id="sbmt_btn">Submit</button>
-      <br><br>
-      
-      <p><span class="badge" id="total_comments">0</span> Comments:</p><br>
-      
-      <div id="comment_section" class="row">
-        
-       
-        
-        <ul>
-            <li>
-              <label for = "comments">Your Comments :</label>
-              <text area id = "comments" name = "comments"></text>
-            </li>
-        </ul>
-        <div class="input-group">
-		Click counter <span id="count">0</span> clicked times.
-        <div class="input-group-btn">
-			This button <button id="counter" class="btn btn-primary">Click Me!</button>
-			
-		</div>
-    </body>
+        <h3>Personal</h3>
+        <div>
+            Hi, My name is Riba Fathima 
+        </div>
+        <hr/>
+        <h3>Personal</h3>
+       <div>
+           <p>I like to learn web development</p>
+        </div>
+        <hr/>
+        <div class = "footer">
+            This button <button id="counter">Click me!</button> has been clicked <span id ="count">0</span> times
+            <hr/>
+            <input type="text" id="name" placeholder="name"></input>
+            <input type="submit" value="submit" id="submit_btn"></input>
+            <ul id="namelist">
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="/ui/main.js">
+    </script>
+  </body>
 </html>
