@@ -50,6 +50,7 @@ var articles = {
     }  
 };  
 
+
 function createTemplate (data) {
     var title = data.title;
     var date  = data.date;
@@ -75,7 +76,7 @@ var htmlTemplate = `
             ${heading}
          </h3>
          <div>
-             ${date} 
+             ${date.toDateString()} 
          </div>
          <div>
             ${content}
