@@ -23,7 +23,6 @@ var articles = {
       content:`
           <p>
                         Wordsworth, a staunch lover of nature, believed that nature is a storehouse of joy and pleasure.  It is an everflowing fountain of divine beauty.  It is a friend, a guide and a nurse to man.  It has a healing touch of its own.  A ruined body or a broken mind find a lot of comfort and consolation in the lap of nature.  It provides a man with fresh energy and a new vigour.  It is a manifestation of the divine.
- 
           </p>`
    },
     'article-two' : {
