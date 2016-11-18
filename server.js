@@ -44,7 +44,7 @@ var articles = {
       date: 'Sep 15, 2016',
       content: 
           `<p>
-				This is my third article
+				Kindness is one of the seven virtues. It can be defined as the righteous and caring attitude towards other. But the definition of the kindness does not limit to these two words only. Kindness is a complex term to comprehend yet simplest to realise. Showing kindness towards others gives a feeling of joy and mirth to the recipient. The doer is also satiated by the feeling of warmth and compassion. Kindness is the basic driving force of the nature. The nature is so kind to us that it helps in flourishing the civilizations. The rising sun and the wandering clouds are all the miracles of nature only. Though, the perspective completely changes with the scientific reasoning, yet everyone agrees that the whole cosmos conspires to sustain life and hope.
           </p>`
     }
 };
