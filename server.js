@@ -31,7 +31,11 @@ var articles = {
       date: 'Sep 10, 2016',
       content: 
           `<p>
-				This is my second article
+				A friend is a person that someone likes or knows.
+
+               People who are friends talk to each other and spend time together. They also help each other when they are in trouble or are hurt. Friends are people that can be looked up to and trusted. Sometimes people can't share their secrets with their parents so they can share it with their friends. Usually friends have similar interests. A friend is one who admires a person's skill and helps or encourages them to make the right choices and do not get into any trouble at all.
+
+                The strength of the bond of friendship between two people can vary. If the bond is very strong, they are called best friends. This can usually be achieved by possessing the elements of friendship, by being kind, generous, loyal, honest and by having fun. With these qualities you can truly enjoy the bliss of friendship. There are expectations, demands and complaints in friendship too.
           </p>`
     },
     'article-three': {
