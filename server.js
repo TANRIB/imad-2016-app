@@ -8,7 +8,7 @@ var config = {
     database: 'tanrib',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: process.env.DB_PASSWORD
+    password: 'db-tanrib-83634'
 };
 
 var app = express();
