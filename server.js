@@ -14,7 +14,6 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-
 var articles = {
     'article-one' : {
       title:'Article One | Riba Fathima',
