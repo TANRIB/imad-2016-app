@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-var crypto=require('crypto');
+var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
