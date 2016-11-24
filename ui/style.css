@@ -1,7 +1,7 @@
 body {
     font-family : sans-serif; 
     margin-top : 60px;
-    background: url("https://www.clipartsgram.com/image/1977766765-windows-8-background-e809b.jpg");
+    background: url("http://www.esa.int/var/esa/storage/images/esa_multimedia/images/2016/11/perspective_view_in_acheron_fossae/16210921-1-eng-GB/Perspective_view_in_Acheron_Fossae_banner_top_zone_image_crop.jpg");
 }
 
 .center {
@@ -14,10 +14,6 @@ body {
 
 .bold {
     font-weight: bold;
-}
-
-.article {
-    background: url("http://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg");
 }
 
 .container  {
