@@ -5,51 +5,52 @@
     </head>
     <body>
         <div class ="container">
-            <h1> BLOG</h1>
-             <div class="center">
-                 <p> This is my blog</p>
-             </div>
-             <h3>About Me</h3>
-             <div>
-                 Hi, My name is Riba Fathima 
-             </div>
-             <hr/>
-             <h3>My Hobbies</h3>
-             <div>
-                 <p>I like to learn web development</p>
-                 <p>I like to travel and explore new places and to read books..</p>
-             </div>
-             <hr/>
-             <ul>
-                 <li>
-                     <a href = "#">Home</a>
-                 </li>
-                 <li>
-                     <a href = "#">About</a>
-                     <p> I am a designer</p>
-                 </li> 
-                 <li>
-                     <a href = "#">Contact</a>
-                     
-                 </li>
-                 
-             </ul>
+             <h3 id="heading">My BlogApp</h3>
+             <div id="header"> 
+                    <div id="articles">
+                        <ul id="nav-bar">
+                            <li class="dropdown"> 
+                                <a href="/" >Home</a>  
+                            </li>
+                               <li class="dropdown"> 
+                                <a href="#" class="dropbtn">Personal Interests</a>  
+                                <div id="PersList" class="dropdown-content"></div>
+                            </li>
+                            <li class="dropdown"> 
+                                <a href="#" class="dropbtn">Professional Interests</a>  
+                                <div id ="ProfList" class="dropdown-content"></div>
+                                 </li>
+                            <li class="dropdown" id="login"> 
+                                <a href="#" class="dropbtn" id="loginbtn"></a>  
+                                <div id ="loginarea" class="dropdown-content"></div>
+                            </li>
+                        </ul>    </div>                
+                              
+            </div>   
+            <div id="main-text">
+                <div> 
+                    <p> Hi! I am Riba </p>
+                    <p> Wannabe web and mobile app techie, avid reader, foodie, traveler</p>
+                    <p> This is my profile page and my first webapp</p>
+                    
+                <h3> Technical Features: </h3>
+                <div> Built on the IMAD console, an nginx server acting as reverse proxy</div>
+                <div> Built from scratch without using any templates, with JavaScript, CSS and HTML</div>
+                <div> Stack is PostgreSQL, express js, node js</div>
+                <div> PostgreSQL database used is normalised and has no data redundancy</div>
+                <div> SQL injection proof and XSS attacks proof!</div>
+                </div>
+            </div>
+           
+            <hr/>            
+                 <div class="footer">
+                 </div> 
+        </div> 
+        
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </body>   
+</html>                          
+                                
+            
              
-                <div id="login_area">
-                <center>Loading login status...</center>
-            </div>
-             <hr/>
-            <h3>My Articles</h3>
-            <div id="articles">
-                <center>Loading articles...</center>
-            </div>
-            <div class="footer">
-            </div>
-        </div>
-
-            <div class="footer">
-        </div>
-    <script type="text/javascript" src="/ui/main.js">
-    </script>
-  </body>
-</html>
