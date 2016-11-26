@@ -27,6 +27,9 @@ function createTemplate (data) {
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
+    var image = data.image;
+    var subtitle = data.subtitle;
+    var author = data.author;	
     
     var htmlTemplate = `
    
@@ -108,9 +111,10 @@ function createTemplate (data) {
 		<div id="footer">
 			&copy; Untitled | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a> | Images by <a href="http://pdphoto.org/">PDPhoto</a>
 		</div>
-		<script type="text/javascript" src="/ui/main.js">
+		<script type="text/javascript" src="/ui/main.js"></script>
 <script type="text/javascript" src="/ui/article.js"></script>
-        </script>
+
+     
 	</body>
 </html>
 
