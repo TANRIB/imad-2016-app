@@ -1,13 +1,23 @@
 function loadLoginForm () {
-    var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
-        <input type="text" id="username" placeholder="username" />
-        <input type="password" id="password" />
-        <br/><br/>
-        <input type="submit" id="login_btn" value="Login" />
-        <input type="submit" id="register_btn" value="Register" />
+         var loginHtml = ` <h3>Login/Register Here For Posting Comments On The Articles!</h3>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Your Username" required>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+            </div>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-danger form-button" id="login_btn" value="Login" />
+        <input type="submit" class="btn btn-danger form-button" id="register_btn" value="Register" />
         `;
-        document.getElementById('login_area').innerHTML = loginHtml;
+             
+    document.getElementById('login_area').innerHTML = loginHtml;
     
     // Submit username/password to login
     var submit = document.getElementById('login_btn');
@@ -38,7 +48,7 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-       if (username === '' || password === '') {
+        if (username === '' || password === '') {
         alert("Username/Password field can't be left empty");
         return;
     }
@@ -71,7 +81,7 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-      if (username === '' || password === '') {
+     if (username === '' || password === '') {
         alert("Username/Password field can't be left empty");
         return;
     }
@@ -83,11 +93,19 @@ function loadLoginForm () {
     };
 }
 
+function escapeHTML (text)
+{
+    var $text = document.createTextNode(text);
+    var $div = document.createElement('div');
+    $div.appendChild($text);
+    return $div.innerHTML;
+}
+
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById('login_area');
     loginArea.innerHTML = `
-        <h3> Hi <i>${username}</i></h3>
-        <a href="/logout">Logout</a>
+        <h3> Hi!</h3> <p style="color:#ff0282";font-weight:bold>${escapeHTML(username).toUpperCase()}</p><hr>
+        <a href="/logout"><input type="submit" class="btn btn-danger form-button" id="logout" value="Logout" /></a>
     `;
 }
 
@@ -107,6 +125,25 @@ function loadLogin () {
     request.open('GET', '/check-login', true);
     request.send(null);
 }
+
+
+//site visit counter
+function getCounter(){
+var request = new XMLHttpRequest();
+request.onreadystatechange = function() {
+    if(request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+            var counter = request.responseText;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
+        }
+    }
+};
+                                         
+ request.open('GET', '/counter', true);
+    request.send(null);
+}
+
 function loadArticles () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -114,15 +151,26 @@ function loadArticles () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles');
             if (request.status === 200) {
-                var content = '<ul>';
                 var articleData = JSON.parse(this.responseText);
+                var content = '';
                 for (var i=0; i< articleData.length; i++) {
-                    content += `<li>
-                    <a href="/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
+                     content += `<div class="container">
+                                <div class="row">
+                               <div class="post-preview">
+                                <a href="/${articleData[i].title}">
+                                <h2 class="post-title">
+                                     ${articleData[i].heading}
+                                </h2>
+                                <h3 class="post-subtitle">
+                                     ${articleData[i].subtitle}
+                                 </h3>
+                                </a>
+                    <p class="post-meta">Posted by <a href="/about.html">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>
+         <hr>       </div>
+                </div>
+                </div>`;
                 }
-                content += "</ul>";
-                articles.innerHTML = content;
+               articles.innerHTML = content;
             } else {
                 articles.innerHTML('Oops! Could not load all articles!');
             }
@@ -132,7 +180,10 @@ function loadArticles () {
     request.open('GET', '/get-articles', true);
     request.send(null);
 }
+
+getCounter();
 // The first thing to do is to check if the user is logged in!
 loadLogin();
+
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
