@@ -29,21 +29,59 @@ function createTemplate (data) {
     var content = data.content;
     
     var htmlTemplate = `
-    <html>
-      <head>
-          <title>
-              ${title}
-          </title>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link href="/ui/style.css" rel="stylesheet" />
-      </head> 
-      <body>
-          <div class="container">
-              <div>
-                  <a href="/">Home</a>
-              </div>
-              <hr/>
-              <h3>
+   
+
+
+<html>
+	<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>Article by Tanza</title>
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet" type="text/css" />
+		<link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
+		
+		<link href="/ui/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="logo">
+					<h1><a href="#">Artifice</a></h1>
+				</div>
+				<div id="menu">
+					<ul>
+						<li class="first current_page_item"><a href="index.html">Homepage</a></li>
+						<li><a href="#">Blog</a></li>
+						
+						<li><a href="about.html">About Me</a></li>
+						<li class="last"><a href="contact.html">Contact</a></li>
+					</ul>
+					<br class="clearfix" />
+				</div>
+			</div>
+			<div id="splash">
+				<img src="images/pic1.jpg" width="1180" height="295" alt="" />
+			</div>
+			<div id="page">
+				<div id="content">
+					<div class="box">
+						<h2>Please Login/Register to post your comments.</h2>
+						 <div id="login_area">
+                <center>Loading login status...</center>
+            </div>
+					</div>
+					
+					
+					<br class="clearfix" />
+				</div>
+				
+				<div id="sidebar1">
+					<div class="box">
+						<h3>My Articles</h3>
+						
+							 <h3>
                   ${heading}
               </h3>
               <div>
@@ -61,8 +99,21 @@ function createTemplate (data) {
               </div>
           </div>
           <script type="text/javascript" src="/ui/article.js"></script>
-      </body>
-    </html>
+					</div>
+				
+				</div>
+				<br class="clearfix" />
+			</div>
+		</div>
+		<div id="footer">
+			&copy; Untitled | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a> | Images by <a href="http://pdphoto.org/">PDPhoto</a>
+		</div>
+		<script type="text/javascript" src="/ui/main.js">
+        </script>
+	</body>
+</html>
+
+       
     `;
     return htmlTemplate;
 }
