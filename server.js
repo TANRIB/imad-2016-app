@@ -119,6 +119,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/index.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
 app.get('/images/pic1.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/images', 'pic1.jpg'));
 });
