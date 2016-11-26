@@ -1,5 +1,5 @@
 function loadLoginForm () {
-         var loginHtml = ` <h3>Login/Register Here For Posting Comments On The Articles!</h3>
+         var loginHtml = ` 
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <label>Username</label>
@@ -127,19 +127,7 @@ function loadLogin () {
 }
 
 
-//site visit counter
-function getCounter(){
-var request = new XMLHttpRequest();
-request.onreadystatechange = function() {
-    if(request.readyState === XMLHttpRequest.DONE) {
-        if (request.status === 200) {
-            var counter = request.responseText;
-            var span = document.getElementById('count');
-            span.innerHTML = counter.toString();
-        }
-    }
-};
-                                         
+                             
  request.open('GET', '/counter', true);
     request.send(null);
 }
@@ -166,7 +154,7 @@ function loadArticles () {
                                  </h3>
                                 </a>
                     <p class="post-meta">Posted by <a href="/about.html">${articleData[i].author}</a> on (${articleData[i].date.split('T')[0]})</p>
-         <hr>       </div>
+         <hr>  <br>     </div>
                 </div>
                 </div>`;
                 }
