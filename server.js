@@ -128,18 +128,21 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/index.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+app.get('/images/pic1.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic1.jpg'));
 });
 
-app.get('/blog.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+app.get('/images/pic2.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic2.jpg'));
 });
 
-app.get('/trainers.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'trainers.html'));
+app.get('/images/pic3.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic3.jpg'));
 });
 
+app.get('/images/pic4.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic4.jpg'));
+});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -147,6 +150,18 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+
+app.get('/blog.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
+
+app.get('/contact.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
+});
+
+app.get('/about.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
 
 
