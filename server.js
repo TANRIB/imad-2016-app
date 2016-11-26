@@ -98,7 +98,7 @@ function createTemplate (data) {
                 <center>Loading comments...</center>
               </div>
           </div>
-          <script type="text/javascript" src="/ui/article.js"></script>
+          
 					</div>
 				
 				</div>
@@ -109,6 +109,7 @@ function createTemplate (data) {
 			&copy; Untitled | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a> | Images by <a href="http://pdphoto.org/">PDPhoto</a>
 		</div>
 		<script type="text/javascript" src="/ui/main.js">
+<script type="text/javascript" src="/ui/article.js"></script>
         </script>
 	</body>
 </html>
