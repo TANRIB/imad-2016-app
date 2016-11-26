@@ -8,7 +8,7 @@ var session = require('express-session');
 
 var config = {
     user: 'tanrib',
-    database: '	tanrib',
+    database: 'tanrib',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -27,16 +27,9 @@ function createTemplate (data) {
     var date = data.date;
     var heading = data.heading;
     var content = data.content;
-    var image = data.image;
-    var subtitle = data.subtitle;
-    var author = data.author;	
     
-    
-             
-var htmlTemplate = `
-
-
-<html>
+    var htmlTemplate = `
+   <html>
 	<head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -118,8 +111,6 @@ var htmlTemplate = `
 	</body>
 </html>
 
-						
-
     `;
     return htmlTemplate;
 }
@@ -161,8 +152,6 @@ app.get('/contact.html', function (req, res) {
 app.get('/about.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'about.html'));
 });
-
-
 
 function hash (input, salt) {
     // How do we create a hash?
@@ -242,8 +231,8 @@ app.get('/check-login', function (req, res) {
 });
 
 app.get('/logout', function (req, res) {
-delete req.session.auth;
-res.redirect('back');
+   delete req.session.auth;
+   res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
 var pool = new Pool(config);
@@ -303,8 +292,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
     }
 });
 
-
-app.get('/:articleName', function (req, res) {
+app.get('/articles/:articleName', function (req, res) {
   // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
   pool.query("SELECT * FROM article WHERE title = $1", [req.params.articleName], function (err, result) {
     if (err) {
