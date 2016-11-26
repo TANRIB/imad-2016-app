@@ -4,13 +4,13 @@ function loadCommentForm () {
     var commentFormHtml = `
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-              <label>Write your Comment.</label>
+              <label>Write your Comment</label>
         <textarea id="comment_text" rows="4" cols="80" class="form-control" placeholder="Enter your comment here..." required>
         </textarea>
         </div>
         </div>
         <br/>
-        <input type="submit" class="btn btn-danger form-button" id="submit" value="Submit" />
+        <input type="submit" class="btn btn-default" id="submit" value="Submit" />
         <br/>
         `;
     document.getElementById('comment_form').innerHTML = commentFormHtml;
@@ -88,9 +88,7 @@ function loadComments () {
                         <p style="color:#550C73">${escapeHTML(commentsData[i].comment)}</p>
                         <div class="commenter">
                             <div style='color:#04d99d;font-weight:bold;font-variant: small-caps'>${escapeHTML(commentsData[i].username)}</div> - ${time.toLocaleTimeString()} on ${time.toLocaleDateString()}
-<br>
                         </div>
-<br>
                     </div>`;
                 }
                 comments.innerHTML = content;
