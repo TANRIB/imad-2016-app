@@ -94,6 +94,20 @@ app.get('/images/pic4.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/images', 'pic4.jpg'));
 });
 
+app.get('/about.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
+});
+
+app.get('/contact.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
+});
+
+app.get('/blog.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
+});
+
+
+
 
 function hash (input, salt) {
     // How do we create a hash?
