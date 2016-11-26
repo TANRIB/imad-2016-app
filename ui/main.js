@@ -127,11 +127,6 @@ function loadLogin () {
 }
 
 
-                             
- request.open('GET', '/counter', true);
-    request.send(null);
-}
-
 function loadArticles () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
@@ -169,7 +164,6 @@ function loadArticles () {
     request.send(null);
 }
 
-getCounter();
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 
