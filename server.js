@@ -8,7 +8,7 @@ var session = require('express-session');
 
 var config = {
     user: 'tanrib',
-    database: 'tanrib',
+    database: '	tanrib',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -31,8 +31,9 @@ function createTemplate (data) {
     var subtitle = data.subtitle;
     var author = data.author;	
     
-    var htmlTemplate = `
-   
+    
+             
+var htmlTemplate = `
 
 
 <html>
@@ -113,12 +114,12 @@ function createTemplate (data) {
 		</div>
 		<script type="text/javascript" src="/ui/main.js"></script>
 <script type="text/javascript" src="/ui/article.js"></script>
-
      
 	</body>
 </html>
 
-       
+						
+
     `;
     return htmlTemplate;
 }
@@ -127,41 +128,22 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/ui/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
-});
-
-app.get('/images/pic1.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/images', 'pic1.jpg'));
-});
-
-
-app.get('/images/pic2.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/images', 'pic2.jpg'));
-});
-
-
-app.get('/images/pic3.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/images', 'pic3.jpg'));
-});
-
-
-app.get('/images/pic4.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui/images', 'pic4.jpg'));
-});
-
-app.get('/about.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'about.html'));
-});
-
-app.get('/contact.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
+app.get('/index.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/blog.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'blog.html'));
 });
 
+app.get('/trainers.html', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'trainers.html'));
+});
+
+
+app.get('/ui/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+});
 
 
 
@@ -243,8 +225,8 @@ app.get('/check-login', function (req, res) {
 });
 
 app.get('/logout', function (req, res) {
-   delete req.session.auth;
-   res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
+delete req.session.auth;
+res.redirect('back');
 });
 
 var pool = new Pool(config);
@@ -302,6 +284,13 @@ app.post('/submit-comment/:articleName', function (req, res) {
     } else {
         res.status(403).send('Only logged in users can comment');
     }
+});
+// counter
+
+var counter = 0;
+app.get('/counter',function(req,res){
+    counter = counter+1;
+   res.send(counter.toString()); 
 });
 
 app.get('/:articleName', function (req, res) {
