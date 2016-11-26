@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var config = {
-    user: 'coco98',
-    database: 'coco98',
+    user: 'tanrib',
+    database: 'tanrib',
     host: 'db.imad.hasura-app.io',
     port: '5432',
     password: process.env.DB_PASSWORD
@@ -78,6 +78,22 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/images/pic1.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui/images', 'pic1.jpg'));
 });
+
+
+app.get('/images/pic2.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic2.jpg'));
+});
+
+
+app.get('/images/pic3.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic3.jpg'));
+});
+
+
+app.get('/images/pic4.jpg', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/images', 'pic4.jpg'));
+});
+
 
 function hash (input, salt) {
     // How do we create a hash?
